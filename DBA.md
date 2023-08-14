@@ -1,4 +1,4 @@
-### How to make a column a key
+## How to make a column a key
 ```sql
 -- Rename the organization column to id
 ALTER TABLE organizations
@@ -9,7 +9,7 @@ ALTER TABLE organizations
 ADD CONSTRAINT organization_pk PRIMARY KEY (id);
 ```
 
-### Create a surogate key
+## Create a surogate key
 ```sql
 -- Count the number of distinct rows with columns make, model
 SELECT COUNT(DISTINCT(make, model)) 
@@ -28,7 +28,7 @@ ALTER TABLE cars
 ADD CONSTRAINT id_pk PRIMARY KEY(id);
 ```
 
-### Datatype example
+## Datatype example
 char is used for fixed length data. The main difference between char and varchar is that char will use less memory than variable memory and pad the string with spaces.
 ```sql
 -- Create the table
