@@ -40,7 +40,7 @@ CREATE TABLE students (
 ```
 
 ## Create Foreign Key
-'''sql
+```sql
 -- Add a professor_id column
 ALTER TABLE affiliations
 ADD COLUMN professor_id integer REFERENCES professors (id);
@@ -52,4 +52,14 @@ RENAME organization TO organization_id;
 -- Add a foreign key on organization_id
 ALTER TABLE affiliations
 ADD CONSTRAINT affiliations_organization_fkey FOREIGN KEY (organization_id) REFERENCES organizations (id);
-'''
+```
+
+## Update/Join to add ID column to other table
+```sql
+-- Update professor_id to professors.id where firstname, lastname correspond to rows in professors
+UPDATE affiliations
+SET professor_id = professors.id
+FROM professors
+WHERE affiliations.firstname = professors.firstname AND affiliations.lastname = professors.lastname;
+```
+
